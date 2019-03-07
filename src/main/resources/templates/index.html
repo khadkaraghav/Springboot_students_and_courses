@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div th:each="student : ${students}">
+
+    <h2 th:text="${student.studentName}"></h2>
+
+
+    <h6 th:inline="text"> identified by [[${student.studentID}]]</h6>
+
+    <ul>
+
+
+        <th:block th:object="${student.major}">
+
+            <li th:inline="text">Has been assigned a<b> [[*{courseName}]]</b>
+        </th:block>
+
+    </ul>
+
+
+</div>
+
+</body>
+</html>
